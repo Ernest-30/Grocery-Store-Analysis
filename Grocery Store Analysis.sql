@@ -1,12 +1,18 @@
 USE Grocery_store
 --------------------------------------------------------------------------------------------------------------------------------------------
+/* Looking at the Dataset */
+
+SELECT *
+FROM [Sales Records]
+
+--------------------------------------------------------------------------------------------------------------------------------------------
 /* Cleaning the Date columns, Getting the Duration before Shipping and spliting the Order_Date column into Day, Month and Year */
 
 /*Standardizing the Date column */
 
 UPDATE [Sales Records]
 SET Order_Date = CONVERT (Date, Order_Date),
-	Ship_Date = CONVERT (Date, Ship_Date)
+    Ship_Date = CONVERT (Date, Ship_Date)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /* Adding The Day, Month,Year, Quarter, Duration and IsWeekend Column */
@@ -122,7 +128,7 @@ ORDER BY 2 DESC
 Conversely, February experiences the lowest revenue, reflecting a decline in purchasing activity after the festive period. */
 
 /* Revenue by Day in 2015 */
-SELECT [Day],ROUND (SUM(Total_Revenue),0) AS Total_Revenue
+SELECT [Day], ROUND (SUM(Total_Revenue),0) AS Total_Revenue
 FROM [Sales Records]
 WHERE [Year] = 2015
 GROUP BY [Day]
@@ -134,10 +140,9 @@ On the other hand, Thursdays recorded the lowest revenue, suggesting comparative
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /* What it the Percentage of Orders received during Weekends? */ 
 
-SELECT COUNT ([Order_ID]) AS Total_Orders,
-		SUM(CASE WHEN IsWeekend = 'Yes' THEN 1 ELSE 0 END) AS Weekend_Orders,
-		(SUM(CASE WHEN IsWeekend = 'Yes' THEN 1 ELSE 0 END)*100)/ COUNT ([Order_ID]) AS Percentage_of__Weekend_Orders
+SELECT Isweekend, ROUND((COUNT(*) * 100.0) / (SELECT COUNT(*) FROM [Sales Records]),2) AS Order_Percentage
 FROM [Sales Records]
+GROUP BY Isweekend
 
 /* 28% of the total orders received came in during weekends */
 
@@ -158,10 +163,11 @@ This indicates a strong market presence and successful performance in that regio
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /* What is the Percentage of Orders with late delivery (45 days and above)? */
 
-SELECT COUNT (Order_ID) AS Total_Orders, 
-		SUM(CASE WHEN [Duration] >= 45 THEN 1 ELSE 0 END) AS Late_Delivery,
-		SUM(CASE WHEN [Duration] >= 45 THEN 1 ELSE 0 END)*100/COUNT (Order_ID) AS Late_Percentage
+SELECT  CASE WHEN [Duration] >= 45 THEN 'Late Delivery' ELSE 'Early Delivery' END AS Delivery_Status, 
+		COUNT (Order_ID) AS Total_Orders,
+		(COUNT (*) * 100)/ (SELECT COUNT (*) FROM [Sales Records]) AS Status_Percentage
 FROM [Sales Records]
+GROUP BY CASE WHEN [Duration] >= 45 THEN 'Late Delivery' ELSE 'Early Delivery' END
 
 /* Approximately 11% of the total orders received experienced delayed shipping, indicating a need for improved logistics and fulfillment processes to ensure timely delivery. 
 Efforts should be made to minimize such delays and enhance the overall customer experience by focusing on efficient shipping practices. */
@@ -190,7 +196,7 @@ ORDER BY 2 DESC
 shown comparatively lower performance in terms of revenue, suggesting potential areas for improvement or adjustments in pricing, marketing, or product offerings within this category. */
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-/* What is the Order Contribution by Sales Channel on the Top Performing Item by Revenue? */
+/* What is the Order Contribution by Sales Channel for the Top Performing Item by Revenue? */
 
 SELECT Sales_Channel, COUNT (Order_ID) AS Total_Orders 
 FROM [Sales Records]
