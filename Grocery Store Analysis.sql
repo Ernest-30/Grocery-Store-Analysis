@@ -40,19 +40,19 @@ ALTER TABLE [Sales Records]
 ADD IsWeekend VARCHAR (255);
 UPDATE [Sales Records]
 SET IsWeekend = CASE 
-				WHEN DATEPART(WEEKDAY, Order_Date) IN (1,7) THEN 'Yes' 
-				ELSE 'No'
-				END
+		WHEN DATEPART(WEEKDAY, Order_Date) IN (1,7) THEN 'Yes' 
+		ELSE 'No'
+		END
 
 ALTER TABLE [Sales Records]
 ADD [Quarter] NVARCHAR (255);
 UPDATE [Sales Records]
 SET [Quarter] = CASE
-				WHEN DATEPART(QUARTER,Order_Date) = 1 THEN 'Q1'
-				WHEN DATEPART(QUARTER,Order_Date) = 2 THEN 'Q2'
-				WHEN DATEPART(QUARTER,Order_Date) = 3 THEN 'Q3'
-				WHEN DATEPART(QUARTER,Order_Date) = 4 THEN 'Q4'
-				END
+		WHEN DATEPART(QUARTER,Order_Date) = 1 THEN 'Q1'
+		WHEN DATEPART(QUARTER,Order_Date) = 2 THEN 'Q2'
+		WHEN DATEPART(QUARTER,Order_Date) = 3 THEN 'Q3'
+		WHEN DATEPART(QUARTER,Order_Date) = 4 THEN 'Q4'
+		END
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /* What is the Overall Sales Performance by Year? */
