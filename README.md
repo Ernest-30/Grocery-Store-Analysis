@@ -22,7 +22,7 @@ This repository contains data and analysis on sales performance metrics. The fol
 This project aims to analyze sales performance data to provide insights and answers to key questions related to sales activities. The dataset includes information such as order dates, revenue, regions, item types, and sales channels.
 
 ## Analysis
-Analysis was done on SQL. Click [here]() to view the complete SQL analysis.
+Analysis was done on SQL. Click [here](https://github.com/Ernest-30/Grocery-Store-Analysis/blob/main/Grocery%20Store%20Analysis.sql) to view the complete SQL analysis.
 
 ### Steps
 
