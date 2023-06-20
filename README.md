@@ -1,117 +1,130 @@
-# Grocery-Store-Analysis
-
-This repository contains data and analysis on sales performance metrics. The following information is provided to gain insights into the sales performance:
-
-## Table of Contents
-
-- Overview
-- Analysis
-- Overall Sales Performance by Year
-- Highest Sales Month
-- Day with the Highest Revenue Contribution
-- Revenue Trend in 2015
-- Percentage of Orders Received during Weekends
-- Most Profitable Region
-- Percentage of Late Deliveries
-- Fastest Order Processing to Shipping
-- Top Performing Item by Revenue
-- Order Contribution by Sales Channel
+# Sunnyside-Store-Sales-Analysis
 
 ## Overview
-
-This project aims to analyze sales performance data to provide insights and answers to key questions related to sales activities. The dataset includes information such as order dates, revenue, regions, item types, and sales channels.
+This data analysis project focuses on analyzing sales performance using SQL Server and visualizing the insights using Power BI. The project aims to provide valuable insights into sales trends, performance metrics, key factors impacting revenue generation and answer Business Questions.
 
 ## Analysis
-Analysis was done on SQL. Click [here](https://github.com/Ernest-30/Grocery-Store-Analysis/blob/main/Grocery%20Store%20Analysis.sql) to view the complete SQL analysis.
+
+Please refer to the attached SQL Server [Code](https://github.com/Ernest-30/Sunnyside-Store-Sales-Analysis/blob/main/Sunnyside%20Store%20Analysis.sql) for the detailed analysis.
 
 ### Steps
 
 1. Data Import: The raw data  was imported into the SQL database. This was done using the SQL Server Import and Export Wizard tool.
+
 2. Data Cleaning: I cleansed the data to ensure accuracy and consistency this included standardizing the formats, and correcting errors.
+
 3.  Data Transformation: I transformed the data to make it suitable for analysis. This transformation includes calculations, aggregations, and filtering operations. I also created new columns required for the analysis.
+
 4.  Data Analysis: I applied SQL queries and functions to extract insights from the data. Using the SELECT statements with appropriate conditions, aggregations, and groupings to analyze trends, patterns, and relationships in the data.
-5.  Data Visualization: I visualized the analyzed data by exporting the results to Microsoft Power BI where I presented it in charts and graphs.
 
-## Insights
+5.  Data Visualization: I visualized the analyzed data by exporting the results to Microsoft Power BI where I presented it in charts and graphs and created a dashboard.
 
-## Overall Sales Performance by Year
-This analysis examines the sales performance on a yearly basis to identify trends and patterns in revenue generation.
+The analysis covers various aspects of the sales data to gain meaningful insights and answer the following business questions:
 
-![image](https://github.com/Ernest-30/Grocery-Store-Analysis/assets/123366282/456d993a-d204-4893-845b-81f6e9c01a10)
+### 1. What is Overall Sales Performance by Year?
 
-From the Chart above, the year 2011 stands out as the highest-performing year, demonstrating exceptional sales growth. 
+![image](https://github.com/Ernest-30/Sunnyside-Store-Sales-Analysis/assets/123366282/c6604857-a65a-4fda-a124-c6fa329dd897)
+
+The year 2011 stands out as the highest-performing year, demonstrating exceptional sales growth. 
 Conversely, 2017 experienced the lowest sales figures, reflecting a challenging period for the company.
 
-## Highest Sales Month
-This analysis determines the month that recorded the highest sales activities in terms of revenue generated.
+### 2. Which Month recorded the highest sales?
 
-![image](https://github.com/Ernest-30/Grocery-Store-Analysis/assets/123366282/cda99735-74d1-4142-83c7-51eb3dbd3b35)
+![image](https://github.com/Ernest-30/Sunnyside-Store-Sales-Analysis/assets/123366282/2e85ef63-3573-40a4-aae9-854b2c709fb9)
 
-May emerges as the top-performing month, exhibiting remarkable sales performance. It showcases the 
+The Month of May emerges as the top-performing month, exhibiting remarkable sales performance. It showcases the 
 highest sales figures compared to other months, highlighting its significance in driving business success.
 
-## Day with the Highest Revenue Contribution
-This Identifies the specific day of the week that contributes the highest revenue to the overall sales.
+### 3. Which day has the highest revenue contribution?
 
-![image](https://github.com/Ernest-30/Grocery-Store-Analysis/assets/123366282/b6239182-8c52-49f0-9b19-877c2473de3a)
+![image](https://github.com/Ernest-30/Sunnyside-Store-Sales-Analysis/assets/123366282/32325041-f968-4ad6-aece-32fe32891245)
 
 Friday takes the lead in terms of revenue contribution, making it the most lucrative day of the week. Its strong performance 
 establishes Friday as the top revenue-generating day, showcasing its significance in driving business success.
 
-## Revenue Trend in 2015
-This analyzes the revenue trend throughout the year 2015 to understand the overall performance and identify any significant changes or patterns.
+### 4. What is the Revenue Trend in 2015?
 
-![image](https://github.com/Ernest-30/Grocery-Store-Analysis/assets/123366282/cbcc0ba8-a58a-48e6-b6be-86efcd9a6039)
+![image](https://github.com/Ernest-30/Sunnyside-Store-Sales-Analysis/assets/123366282/c0e48bda-623d-41f3-9916-8a8f69c50789)
 
-From the Chart above;
-1. Q1 accounts for the highest revenue generated in 2015, while the least revenue generated was in Q2.
-2. January emerges as the month with the highest revenue, fueled by increased consumer spending during the Christmas and New Year holiday season. Conversely, February experiences the lowest revenue, reflecting a decline in purchasing activity after the festive period.
-3. In 2015, Fridays stood out as the day with the highest revenue generated, indicating strong sales performance and customer activity. 
+i. Q1 accounts for the highest revenue generated in 2015, while the least revenue generated was in Q2.
+
+ii. January emerges as the month with the highest revenue, fueled by increased consumer spending during the Christmas and New Year holiday season.  Conversely, February experiences the lowest revenue, reflecting a decline in purchasing activity after the festive period.
+
+iii. In 2015, Fridays stood out as the day with the highest revenue generated, indicating strong sales performance and customer activity. 
 On the other hand, Thursdays recorded the lowest revenue, suggesting comparatively lower sales during that day of the week.
 
+### 5. What percentage of Orders was received during Weekends?
 
-## Percentage of Orders Received during Weekends
-This calculates the percentage of orders that were received on weekends, providing insights into customer behavior during weekends.
+![image](https://github.com/Ernest-30/Sunnyside-Store-Sales-Analysis/assets/123366282/5833fce0-6894-4ff9-bf3d-cf3f9be98e18)
 
-![image](https://github.com/Ernest-30/Grocery-Store-Analysis/assets/123366282/8f5f782b-8519-430f-b424-147f4d39a3fb)
+Weekends accounted for only 28% of the total orders received.
 
- Weekends accounted for only 28% of the total orders received.
- 
-## Most Profitable Region
-This Identifies the region that generates the highest profit, helping to understand the geographical impact on sales performance.
+### 6. Where is the most Profitable Region?
 
-![image](https://github.com/Ernest-30/Grocery-Store-Analysis/assets/123366282/89c66184-b637-4f0c-9cb3-b66501379fe3)
+![image](https://github.com/Ernest-30/Sunnyside-Store-Sales-Analysis/assets/123366282/ab77f6dc-7968-4a76-869f-d1ff183aa16a)
 
 The Sub-Saharan Africa region stands out as the most lucrative, showcasing the highest number of received orders, units sold, revenue generated, and profit earned. This indicates a strong market presence and successful performance in that region
 
-## Percentage of Late Deliveries
-This calculates the percentage of orders with late deliveries, defined as orders that were delivered 45 days or more after the order date.
+### 7. What is the percentage of Late Deliveries? (45 days and above)
 
-![image](https://github.com/Ernest-30/Grocery-Store-Analysis/assets/123366282/3b60f7a3-f4ed-4420-890b-37ab2648f571)
+![image](https://github.com/Ernest-30/Sunnyside-Store-Sales-Analysis/assets/123366282/12475b30-e82f-47ed-a732-719f461edbc0)
 
 Approximately 11% of the total orders received experienced delayed shipping, indicating a need for improved logistics and fulfillment processes to ensure timely delivery. 
 Efforts should be made to minimize such delays and enhance the overall customer experience by focusing on efficient shipping practices.
+ 
+### 8. Which Countries are the top 10 performers in terms of revenue?
 
-## Fastest Order Processing to Shipping
-This shows the country that has the fastest order processing time, measured from the order placement to the shipping stage.
+![image](https://github.com/Ernest-30/Sunnyside-Store-Sales-Analysis/assets/123366282/53271f45-f8fa-4f59-b0c5-003f913aca0b)
 
-![image](https://github.com/Ernest-30/Grocery-Store-Analysis/assets/123366282/13bb919b-4b67-4c12-afb4-791cf0ea0b28)
+The chart above shows the top 10 performing Countries by revenue with China emerging as the Country with the highest revenue contribution.
 
-The countries with the fastest order processing to shipping time on the average are Vietnam, Dominica and Kazakhstan where orders are processed and shipped within 22 days, ensuring prompt delivery to customers. This efficient process reflects a streamlined logistics operation and a commitment to delivering orders in a timely manner.
+### 9. What is the Top performing Item Type by Revenue?
 
-## Top Performing Item by Revenue
-This identifies the item type that contributes the highest revenue, showcasing the most successful product category.
-
-![image](https://github.com/Ernest-30/Grocery-Store-Analysis/assets/123366282/c44a2786-efae-4e49-bf5d-65531cee3de0)
+![image](https://github.com/Ernest-30/Sunnyside-Store-Sales-Analysis/assets/123366282/53c063ec-a239-454e-b46a-9d8ea3d2755e)
 
 Household items have emerged as the top-performing category in terms of revenue, showcasing their strong demand and profitability. On the other hand, fruits items have shown comparatively lower performance in terms of revenue, suggesting potential areas for improvement or adjustments in pricing, marketing, or product offerings within this category.
 
-## Order Contribution by Sales Channel
-This analyzes the order contribution by sales channel for the top-performing item by revenue, providing insights into the sales distribution across different channels.
+### 10. What is the Order Contribution by Sales Channel for the Top Performing Item by Revenue?
 
-![image](https://github.com/Ernest-30/Grocery-Store-Analysis/assets/123366282/d86152c6-9dc7-4c27-a3f0-5510ae6c353e)
+![image](https://github.com/Ernest-30/Sunnyside-Store-Sales-Analysis/assets/123366282/93f845a1-8e17-4850-b242-bbc1f3a312f6)
 
 The offline channel has slightly contributed more than the online channel in terms of the number of orders received for the top-performing item (household) in terms of revenue. This indicates that customers are still inclined towards traditional brick-and-mortar stores when purchasing household items, despite the growing popularity of online shopping.
+
+## Sales Dashboard
+
+The project includes the development of a comprehensive sales dashboard using Power BI. The dashboard presents key metrics and visualizations to provide a clear overview of the sales performance and trends. The dashboard includes interactive charts, graphs, and filters to facilitate data exploration and analysis.
+
+![image](https://github.com/Ernest-30/Sunnyside-Store-Sales-Analysis/assets/123366282/0ff47db9-856c-4d59-a202-123e6d8d248e)
+
+### Click [here](https://github.com/Ernest-30/Sunnyside-Store-Sales-Analysis/blob/main/Sunnyside%20store%20Dashboard.pbix) to download the full dashboard
+
+
+## Conclusion and Recommendations
+
+### Conclusion:
+The analysis of the Sunnyside Stores dataset provides valuable insights into the sales performance, revenue trends, and customer behavior. Several key findings emerged from the analysis, including the highest sales performance in 2011 and the lowest in 2017. May stood out as the month with the highest revenue, while Fridays recorded the highest revenue contribution among the days of the week. Q1 of 2015 demonstrated the highest revenue, with January and Fridays leading in revenue generation.
+
+The analysis also revealed that weekends accounted for a relatively small percentage of total orders, indicating potential opportunities to target and attract more customers during weekends. The Sub-Saharan Africa region emerged as the most profitable region, while approximately 11% of orders experienced late deliveries, suggesting a need for improved logistics and fulfillment processes.
+
+### Recommendations:
+1. Focus on leveraging the success of high-performing years, such as 2011, to identify and replicate strategies that drove exceptional sales growth.
+
+2. Develop targeted marketing campaigns and promotions to capitalize on the high revenue months, particularly May, and devise strategies to drive sales during lower-performing months like February.
+
+3. Implement strategies to optimize operations on Fridays, considering their significance in revenue generation. This may include increased staffing, special promotions, or tailored product offerings.
+
+4. Explore ways to increase customer engagement and attract more orders during weekends, such as offering exclusive weekend deals or enhancing the online shopping experience.
+
+5. Continuously monitor and improve the logistics and fulfillment processes to minimize late deliveries and ensure timely order fulfillment.
+
+6. Further explore the potential of the Sub-Saharan Africa region by expanding marketing efforts, increasing product availability, and understanding local customer preferences and behaviors.
+
+7. Evaluate and refine the product offerings and marketing strategies for the fruits category to improve its revenue performance.
+
+8. Consider the preferences and behaviors of customers in different sales channels, both online and offline, to optimize marketing efforts and enhance customer experience.
+
+By implementing these recommendations, Urban Essential Stores can further improve their sales performance, customer satisfaction, and overall business success.
+
 
 Note: The data used for this analysis is fictional and for illustrative purposes only.
 
