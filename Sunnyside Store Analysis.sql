@@ -1,4 +1,4 @@
-USE Grocery_store
+USE Sunnyside_store
 --------------------------------------------------------------------------------------------------------------------------------------------
 /* Looking at the Dataset */
 
@@ -12,7 +12,7 @@ FROM [Sales Records]
 
 UPDATE [Sales Records]
 SET Order_Date = CONVERT (Date, Order_Date),
-    Ship_Date = CONVERT (Date, Ship_Date)
+	Ship_Date = CONVERT (Date, Ship_Date)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /* Adding The Day, Month,Year, Quarter, Duration and IsWeekend Column */
@@ -63,28 +63,23 @@ SET [Quarter] = CASE
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /* What is the Overall Sales Performance by Year? */
 
-SELECT [Year],COUNT ([Order_ID]) AS Total_Orders, 
-		ROUND(SUM([Total_Cost]),0) AS Total_COGS,
-		SUM(Units_Sold) AS Quantity_Sold,
-		ROUND (SUM(Total_Profit),0) AS Total_Profit,
+SELECT [Year],ROUND (SUM(Total_Profit),0) AS Total_Profit,
 		ROUND (SUM(Total_Revenue),0) AS Total_Revenue
 FROM [Sales Records]
 GROUP BY [YEAR]
-ORDER BY 6 DESC
+ORDER BY 3 DESC
 
 /* The year 2011 stands out as the highest-performing year, demonstrating exceptional sales growth. 
 Conversely, 2017 experienced the lowest sales figures, reflecting a challenging period for the company. */
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-/* Which month recorded the highest sales activities? */
+/* Which month recorded the highest sales? */
 
-SELECT [Month],COUNT ([Order_ID]) AS Total_Orders,
-		SUM(Units_Sold) AS Quantity_Sold,
-		ROUND (SUM(Total_Profit),0) AS Total_Profit,
+SELECT [Month],ROUND (SUM(Total_Profit),0) AS Total_Profit,
 		ROUND (SUM(Total_Revenue),0) AS Total_Revenue
 FROM [Sales Records]
 GROUP BY [Month]
-ORDER BY 5 DESC
+ORDER BY 3 DESC
 
 /* May emerges as the top-performing month, exhibiting remarkable sales performance. It showcases the 
 highest sales figures compared to other months, highlighting its significance in driving business success. */
@@ -92,13 +87,10 @@ highest sales figures compared to other months, highlighting its significance in
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /* Which day has the highest revenue contribution? */
 
-SELECT [Day],COUNT ([Order_ID]) AS Total_Orders,
-		SUM(Units_Sold) AS Quantity_Sold,
-		ROUND (SUM(Total_Profit),0) AS Total_Profit,
-		ROUND (SUM(Total_Revenue),0) AS Total_Revenue		
+SELECT [Day], ROUND (SUM(Total_Revenue),0) AS Total_Revenue		
 FROM [Sales Records]
 GROUP BY [Day]
-ORDER BY 5 DESC
+ORDER BY 2 DESC
 
 /* Friday takes the lead in terms of revenue contribution, making it the most lucrative day of the week. Its strong performance 
 establishes Friday as the top revenue-generating day, showcasing its significance in driving business success. */
@@ -128,7 +120,7 @@ ORDER BY 2 DESC
 Conversely, February experiences the lowest revenue, reflecting a decline in purchasing activity after the festive period. */
 
 /* Revenue by Day in 2015 */
-SELECT [Day], ROUND (SUM(Total_Revenue),0) AS Total_Revenue
+SELECT [Day],ROUND (SUM(Total_Revenue),0) AS Total_Revenue
 FROM [Sales Records]
 WHERE [Year] = 2015
 GROUP BY [Day]
@@ -173,15 +165,14 @@ GROUP BY CASE WHEN [Duration] >= 45 THEN 'Late Delivery' ELSE 'Early Delivery' E
 Efforts should be made to minimize such delays and enhance the overall customer experience by focusing on efficient shipping practices. */
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-/* Which Country has the Fastest Order processing to Shipping? */
+/* Which Countries are the top 10 performers in terms of revenue? */
 
-SELECT TOP 5 Country, AVG(Duration) AS Avg_Duration_Days
+SELECT TOP 10 Country,ROUND(SUM(Total_Revenue),0) As Revenue
 FROM [Sales Records]
 GROUP BY Country
-ORDER BY 2
+ORDER BY 2 DESC
 
-/* The countries with the fastest order processing to shipping time on the average are Vietnam, Dominica and Kazakhstan where orders are processed and shipped within 22 days, 
-ensuring prompt delivery to customers. This efficient process reflects a streamlined logistics operation and a commitment to delivering orders in a timely manner. */    
+/* China emerges as the Country with the highest revenue contribution. */    
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -207,4 +198,9 @@ GROUP BY Sales_Channel
 This indicates that customers are still inclined towards traditional brick-and-mortar stores when purchasing household items, despite the growing popularity of online shopping. */
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/* Build an overall Dashboard */
 
+/* Selecting the data for the dashboard */
+
+SELECT *
+FROM [Sales Records]
