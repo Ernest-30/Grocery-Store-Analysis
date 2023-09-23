@@ -96,8 +96,6 @@ The project includes the development of a comprehensive sales dashboard using Po
 
 ![image](https://github.com/Ernest-30/Sunnyside-Store-Sales-Analysis/assets/123366282/0ff47db9-856c-4d59-a202-123e6d8d248e)
 
-### Click [here](https://github.com/Ernest-30/Sunnyside-Store-Sales-Analysis/blob/main/Sunnyside%20store%20Dashboard.pbix) to download the full dashboard
-
 
 ## Conclusion and Recommendations
 
